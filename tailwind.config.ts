@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Travel-themed colors
+				ocean: {
+					50: '#f0f9ff',
+					100: '#e0f2fe',
+					500: '#0ea5e9',
+					600: '#0284c7',
+					700: '#0369a1',
+					900: '#0c4a6e'
+				},
+				sunset: {
+					50: '#fff7ed',
+					100: '#ffedd5',
+					500: '#f97316',
+					600: '#ea580c',
+					700: '#c2410c',
+					900: '#9a3412'
+				},
+				earth: {
+					50: '#f7f7f6',
+					100: '#e3e3e0',
+					500: '#78716c',
+					600: '#57534e',
+					700: '#44403c',
+					900: '#1c1917'
 				}
 			},
 			borderRadius: {
@@ -84,11 +110,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out'
+			},
+			backgroundImage: {
+				'travel-gradient': 'linear-gradient(135deg, #0ea5e9 0%, #f97316 100%)',
+				'sunset-gradient': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+				'ocean-gradient': 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)'
 			}
 		}
 	},

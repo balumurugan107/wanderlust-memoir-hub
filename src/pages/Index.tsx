@@ -1,12 +1,158 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import Header from '@/components/Header';
+import MapComponent from '@/components/MapComponent';
+import TripCard from '@/components/TripCard';
+import TripModal from '@/components/TripModal';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
+
+// Mock data for demonstration
+const mockTrips = [
+  {
+    id: '1',
+    destination: 'Paris',
+    country: 'France',
+    startDate: '2024-05-15',
+    endDate: '2024-05-22',
+    budget: 2500,
+    spent: 2100,
+    description: 'A romantic getaway to the City of Light. Explored the Louvre, climbed the Eiffel Tower, and enjoyed countless croissants.',
+    status: 'completed' as const,
+    photos: [
+      { id: '1', url: '/placeholder.svg', caption: 'Eiffel Tower at sunset', tags: ['architecture', 'sunset'] },
+      { id: '2', url: '/placeholder.svg', caption: 'Louvre Museum', tags: ['art', 'museum'] },
+      { id: '3', url: '/placeholder.svg', caption: 'Seine River cruise', tags: ['river', 'cruise'] },
+    ],
+    expenses: [
+      { category: 'Accommodation', amount: 800, color: '#0ea5e9' },
+      { category: 'Food & Dining', amount: 600, color: '#f97316' },
+      { category: 'Transport', amount: 400, color: '#10b981' },
+      { category: 'Activities', amount: 300, color: '#8b5cf6' },
+    ]
+  },
+  {
+    id: '2',
+    destination: 'Tokyo',
+    country: 'Japan',
+    startDate: '2024-08-10',
+    endDate: '2024-08-20',
+    budget: 3500,
+    spent: 1200,
+    description: 'Current adventure in the land of the rising sun. Experiencing the perfect blend of traditional culture and modern innovation.',
+    status: 'current' as const,
+    photos: [
+      { id: '4', url: '/placeholder.svg', caption: 'Cherry blossoms in Shibuya', tags: ['nature', 'cityscape'] },
+      { id: '5', url: '/placeholder.svg', caption: 'Traditional tea ceremony', tags: ['culture', 'tradition'] },
+    ],
+    expenses: [
+      { category: 'Accommodation', amount: 600, color: '#0ea5e9' },
+      { category: 'Food & Dining', amount: 400, color: '#f97316' },
+      { category: 'Transport', amount: 200, color: '#10b981' },
+    ]
+  },
+  {
+    id: '3',
+    destination: 'Santorini',
+    country: 'Greece',
+    startDate: '2024-09-15',
+    endDate: '2024-09-25',
+    budget: 2800,
+    spent: 0,
+    description: 'Upcoming Mediterranean escape. Planning to explore the famous blue domes, enjoy local wines, and watch incredible sunsets.',
+    status: 'upcoming' as const,
+    photos: [],
+    expenses: []
+  }
+];
 
 const Index = () => {
+  const [selectedTrip, setSelectedTrip] = useState<typeof mockTrips[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewDetails = (tripId: string) => {
+    const trip = mockTrips.find(t => t.id === tripId);
+    if (trip) {
+      setSelectedTrip(trip);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleLocationAdd = (location: { lat: number; lng: number; name: string }) => {
+    console.log('New location added:', location);
+    // Here you would typically open a form to add trip details
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-8 space-y-8">
+        {/* Map Section */}
+        <section className="animate-fade-in">
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">Your Travel Map</h2>
+              <p className="text-muted-foreground">Click anywhere to add a new destination</p>
+            </div>
+          </div>
+          <MapComponent onLocationAdd={handleLocationAdd} />
+        </section>
+
+        {/* Trips Section */}
+        <section className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">Your Journeys</h2>
+              <p className="text-muted-foreground">Track your adventures and memories</p>
+            </div>
+            <Button className="bg-sunset-600 hover:bg-sunset-700">
+              <Plus className="h-4 w-4 mr-2" />
+              New Trip
+            </Button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {mockTrips.map((trip, index) => (
+              <div 
+                key={trip.id} 
+                className="animate-scale-in"
+                style={{ animationDelay: `${300 + index * 100}ms` }}
+              >
+                <TripCard trip={trip} onViewDetails={handleViewDetails} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Quick Stats */}
+        <section className="animate-fade-in" style={{ animationDelay: '600ms' }}>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="glass-effect p-6 rounded-lg text-center">
+              <div className="text-2xl font-bold text-ocean-600">3</div>
+              <div className="text-sm text-muted-foreground">Countries Visited</div>
+            </div>
+            <div className="glass-effect p-6 rounded-lg text-center">
+              <div className="text-2xl font-bold text-sunset-600">5</div>
+              <div className="text-sm text-muted-foreground">Total Trips</div>
+            </div>
+            <div className="glass-effect p-6 rounded-lg text-center">
+              <div className="text-2xl font-bold text-green-600">$8,800</div>
+              <div className="text-sm text-muted-foreground">Total Budget</div>
+            </div>
+            <div className="glass-effect p-6 rounded-lg text-center">
+              <div className="text-2xl font-bold text-purple-600">5</div>
+              <div className="text-sm text-muted-foreground">Photos Captured</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <TripModal 
+        trip={selectedTrip}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

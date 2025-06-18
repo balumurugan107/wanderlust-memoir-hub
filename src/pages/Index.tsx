@@ -82,7 +82,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50">
       <Header />
       
       <main className="container mx-auto px-4 py-8 space-y-8">
@@ -104,7 +104,7 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-gray-800">Your Journeys</h2>
               <p className="text-muted-foreground">Track your adventures and memories</p>
             </div>
-            <Button className="bg-rose-400 hover:bg-rose-500 text-white">
+            <Button className="bg-emerald-400 hover:bg-emerald-500 text-white">
               <Plus className="h-4 w-4 mr-2" />
               New Trip
             </Button>
@@ -127,19 +127,19 @@ const Index = () => {
         <section className="animate-fade-in" style={{ animationDelay: '600ms' }}>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-teal-500">3</div>
+              <div className="text-2xl font-bold text-emerald-500">3</div>
               <div className="text-sm text-muted-foreground">Countries Visited</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-rose-400">5</div>
+              <div className="text-2xl font-bold text-pink-400">5</div>
               <div className="text-sm text-muted-foreground">Total Trips</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-emerald-400">$8,800</div>
+              <div className="text-2xl font-bold text-teal-400">$8,800</div>
               <div className="text-sm text-muted-foreground">Total Budget</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-violet-400">5</div>
+              <div className="text-2xl font-bold text-indigo-400">5</div>
               <div className="text-sm text-muted-foreground">Photos Captured</div>
             </div>
           </div>

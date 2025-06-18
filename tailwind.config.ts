@@ -63,55 +63,44 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Theme 1: Soft Ocean Breeze - Gentle and harmonious
+				// Light Ocean Theme - Soft and gentle
 				ocean: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e'
+					50: '#f0fdfa',
+					100: '#ccfbf1',
+					200: '#99f6e4',
+					300: '#5eead4',
+					400: '#2dd4bf',
+					500: '#14b8a6',
+					600: '#0d9488',
+					700: '#0f766e',
+					800: '#115e59',
+					900: '#134e4a'
 				},
-				sunset: {
-					50: '#fefce8',
-					100: '#fef3c7',
-					200: '#fde68a',
-					300: '#fcd34d',
-					400: '#fbbf24',
-					500: '#f59e0b',
-					600: '#d97706',
-					700: '#b45309',
-					800: '#92400e',
-					900: '#78350f'
+				// Light Lavender Theme - Soft purple tones
+				lavender: {
+					50: '#faf5ff',
+					100: '#f3e8ff',
+					200: '#e9d5ff',
+					300: '#d8b4fe',
+					400: '#c084fc',
+					500: '#a855f7',
+					600: '#9333ea',
+					700: '#7c3aed',
+					800: '#6b21a8',
+					900: '#581c87'
 				},
-				// Theme 2: Warm Earth Tones - Natural and grounded
+				// Soft Earth Tones - Natural and light
 				earth: {
 					50: '#f7f7f6',
-					100: '#e3e3e0',
-					200: '#c6c6c1',
-					300: '#a8a89e',
-					400: '#84cc16',
-					500: '#65a30d',
-					600: '#4d7c0f',
-					700: '#365314',
-					800: '#1a2e05',
-					900: '#0f1419'
-				},
-				terracotta: {
-					50: '#fef7f0',
-					100: '#fdead7',
-					200: '#f9d5ae',
-					300: '#f4b571',
-					400: '#ed8936',
-					500: '#d97706',
-					600: '#c05621',
-					700: '#9c4221',
-					800: '#7c2d12',
-					900: '#431407'
+					100: '#e8e8e6',
+					200: '#d1d1cc',
+					300: '#b4b4ac',
+					400: '#9a9a8e',
+					500: '#7c7c70',
+					600: '#65655b',
+					700: '#52524a',
+					800: '#44443e',
+					900: '#3a3a35'
 				}
 			},
 			borderRadius: {

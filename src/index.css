@@ -96,30 +96,30 @@
     @apply bg-background text-foreground font-sans;
   }
   
-  /* Theme 1: Soft Pastels - Gentle teal and rose */
+  /* Soft Light Theme - Gentle pastels with light colors */
   .travel-gradient {
-    background: linear-gradient(135deg, #14b8a6 0%, #fb7185 100%);
+    background: linear-gradient(135deg, #a7f3d0 0%, #fce7f3 100%);
   }
   
   .sunset-gradient {
-    background: linear-gradient(135deg, #fb7185 0%, #f472b6 100%);
+    background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
   }
   
   .ocean-gradient {
-    background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+    background: linear-gradient(135deg, #a7f3d0 0%, #bfdbfe 100%);
   }
 
-  /* Theme 2: Warm Neutrals - Sage green and warm beige */
+  /* Alternative Light Theme - Warm light neutrals */
   .theme-neutral .travel-gradient {
-    background: linear-gradient(135deg, #84cc16 0%, #eab308 100%);
+    background: linear-gradient(135deg, #d1fae5 0%, #fef3c7 100%);
   }
   
   .theme-neutral .sunset-gradient {
-    background: linear-gradient(135deg, #eab308 0%, #f59e0b 100%);
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
   }
   
   .theme-neutral .ocean-gradient {
-    background: linear-gradient(135deg, #84cc16 0%, #22c55e 100%);
+    background: linear-gradient(135deg, #d1fae5 0%, #dcfce7 100%);
   }
 }
 

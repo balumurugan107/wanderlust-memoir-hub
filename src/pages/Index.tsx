@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Header from '@/components/Header';
 import MapComponent from '@/components/MapComponent';
@@ -18,7 +19,16 @@ const mockTrips = [
     spent: 2100,
     description: 'A romantic getaway to the City of Light. Explored the Louvre, climbed the Eiffel Tower, and enjoyed countless croissants.',
     status: 'completed' as const,
-    photos: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg']
+    photos: [
+      { id: '1', url: '/placeholder.svg', caption: 'Eiffel Tower at sunset', tags: ['landmark', 'sunset'] },
+      { id: '2', url: '/placeholder.svg', caption: 'Louvre Museum', tags: ['museum', 'art'] }
+    ],
+    expenses: [
+      { category: 'Accommodation', amount: 800, color: '#94a3b8' },
+      { category: 'Food', amount: 600, color: '#f59e0b' },
+      { category: 'Transport', amount: 400, color: '#10b981' },
+      { category: 'Activities', amount: 300, color: '#8b5cf6' }
+    ]
   },
   {
     id: '2',
@@ -30,7 +40,14 @@ const mockTrips = [
     spent: 1200,
     description: 'Current adventure in the land of the rising sun. Experiencing the perfect blend of traditional culture and modern innovation.',
     status: 'current' as const,
-    photos: ['/placeholder.svg', '/placeholder.svg']
+    photos: [
+      { id: '3', url: '/placeholder.svg', caption: 'Tokyo skyline', tags: ['city', 'modern'] }
+    ],
+    expenses: [
+      { category: 'Accommodation', amount: 500, color: '#94a3b8' },
+      { category: 'Food', amount: 400, color: '#f59e0b' },
+      { category: 'Transport', amount: 300, color: '#10b981' }
+    ]
   },
   {
     id: '3',
@@ -42,7 +59,8 @@ const mockTrips = [
     spent: 0,
     description: 'Upcoming Mediterranean escape. Planning to explore the famous blue domes, enjoy local wines, and watch incredible sunsets.',
     status: 'upcoming' as const,
-    photos: []
+    photos: [],
+    expenses: []
   }
 ];
 
@@ -86,7 +104,7 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-gray-800">Your Journeys</h2>
               <p className="text-muted-foreground">Track your adventures and memories</p>
             </div>
-            <Button className="bg-sunset-600 hover:bg-sunset-700">
+            <Button className="bg-rose-400 hover:bg-rose-500 text-white">
               <Plus className="h-4 w-4 mr-2" />
               New Trip
             </Button>
@@ -109,19 +127,19 @@ const Index = () => {
         <section className="animate-fade-in" style={{ animationDelay: '600ms' }}>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-ocean-600">3</div>
+              <div className="text-2xl font-bold text-teal-500">3</div>
               <div className="text-sm text-muted-foreground">Countries Visited</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-sunset-600">5</div>
+              <div className="text-2xl font-bold text-rose-400">5</div>
               <div className="text-sm text-muted-foreground">Total Trips</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-green-600">$8,800</div>
+              <div className="text-2xl font-bold text-emerald-400">$8,800</div>
               <div className="text-sm text-muted-foreground">Total Budget</div>
             </div>
             <div className="glass-effect p-6 rounded-lg text-center">
-              <div className="text-2xl font-bold text-purple-600">5</div>
+              <div className="text-2xl font-bold text-violet-400">5</div>
               <div className="text-sm text-muted-foreground">Photos Captured</div>
             </div>
           </div>

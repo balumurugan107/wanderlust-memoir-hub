@@ -13,9 +13,19 @@ interface TripCardProps {
     endDate: string;
     budget: number;
     spent: number;
-    photos: string[];
+    photos: Array<{
+      id: string;
+      url: string;
+      caption: string;
+      tags: string[];
+    }>;
     description: string;
     status: 'upcoming' | 'current' | 'completed';
+    expenses: Array<{
+      category: string;
+      amount: number;
+      color: string;
+    }>;
   };
   onViewDetails: (tripId: string) => void;
 }
@@ -23,22 +33,22 @@ interface TripCardProps {
 const TripCard = ({ trip, onViewDetails }: TripCardProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'upcoming': return 'bg-blue-100 text-blue-800';
-      case 'current': return 'bg-green-100 text-green-800';
-      case 'completed': return 'bg-gray-100 text-gray-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'upcoming': return 'bg-blue-100 text-blue-700';
+      case 'current': return 'bg-emerald-100 text-emerald-700';
+      case 'completed': return 'bg-slate-100 text-slate-700';
+      default: return 'bg-slate-100 text-slate-700';
     }
   };
 
   const budgetPercentage = (trip.spent / trip.budget) * 100;
-  const budgetColor = budgetPercentage > 100 ? 'text-red-600' : budgetPercentage > 80 ? 'text-orange-600' : 'text-green-600';
+  const budgetColor = budgetPercentage > 100 ? 'text-rose-500' : budgetPercentage > 80 ? 'text-amber-500' : 'text-emerald-500';
 
   return (
-    <Card className="card-hover group cursor-pointer" onClick={() => onViewDetails(trip.id)}>
+    <Card className="card-hover group cursor-pointer border-slate-200" onClick={() => onViewDetails(trip.id)}>
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start">
           <div>
-            <CardTitle className="text-xl group-hover:text-ocean-600 transition-colors">
+            <CardTitle className="text-xl group-hover:text-teal-600 transition-colors">
               {trip.destination}
             </CardTitle>
             <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">

@@ -4,7 +4,7 @@ import { MapPin, Camera, Calendar } from 'lucide-react';
 const Header = () => {
   return (
     <header className="relative overflow-hidden">
-      <div className="travel-gradient h-32 flex items-center justify-center">
+      <div className="bg-gradient-to-r from-teal-500 to-rose-400 h-32 flex items-center justify-center">
         <div className="text-center text-white animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-2">
             <MapPin className="h-8 w-8" />

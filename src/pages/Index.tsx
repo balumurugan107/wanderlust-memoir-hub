@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import MapComponent from '@/components/MapComponent';
@@ -19,17 +18,7 @@ const mockTrips = [
     spent: 2100,
     description: 'A romantic getaway to the City of Light. Explored the Louvre, climbed the Eiffel Tower, and enjoyed countless croissants.',
     status: 'completed' as const,
-    photos: [
-      { id: '1', url: '/placeholder.svg', caption: 'Eiffel Tower at sunset', tags: ['architecture', 'sunset'] },
-      { id: '2', url: '/placeholder.svg', caption: 'Louvre Museum', tags: ['art', 'museum'] },
-      { id: '3', url: '/placeholder.svg', caption: 'Seine River cruise', tags: ['river', 'cruise'] },
-    ],
-    expenses: [
-      { category: 'Accommodation', amount: 800, color: '#0ea5e9' },
-      { category: 'Food & Dining', amount: 600, color: '#f97316' },
-      { category: 'Transport', amount: 400, color: '#10b981' },
-      { category: 'Activities', amount: 300, color: '#8b5cf6' },
-    ]
+    photos: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg']
   },
   {
     id: '2',
@@ -41,15 +30,7 @@ const mockTrips = [
     spent: 1200,
     description: 'Current adventure in the land of the rising sun. Experiencing the perfect blend of traditional culture and modern innovation.',
     status: 'current' as const,
-    photos: [
-      { id: '4', url: '/placeholder.svg', caption: 'Cherry blossoms in Shibuya', tags: ['nature', 'cityscape'] },
-      { id: '5', url: '/placeholder.svg', caption: 'Traditional tea ceremony', tags: ['culture', 'tradition'] },
-    ],
-    expenses: [
-      { category: 'Accommodation', amount: 600, color: '#0ea5e9' },
-      { category: 'Food & Dining', amount: 400, color: '#f97316' },
-      { category: 'Transport', amount: 200, color: '#10b981' },
-    ]
+    photos: ['/placeholder.svg', '/placeholder.svg']
   },
   {
     id: '3',
@@ -61,8 +42,7 @@ const mockTrips = [
     spent: 0,
     description: 'Upcoming Mediterranean escape. Planning to explore the famous blue domes, enjoy local wines, and watch incredible sunsets.',
     status: 'upcoming' as const,
-    photos: [],
-    expenses: []
+    photos: []
   }
 ];
 

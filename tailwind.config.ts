@@ -63,30 +63,55 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Travel-themed colors
+				// Theme 1: Soft Ocean Breeze - Gentle and harmonious
 				ocean: {
 					50: '#f0f9ff',
 					100: '#e0f2fe',
+					200: '#bae6fd',
+					300: '#7dd3fc',
+					400: '#38bdf8',
 					500: '#0ea5e9',
 					600: '#0284c7',
 					700: '#0369a1',
+					800: '#075985',
 					900: '#0c4a6e'
 				},
 				sunset: {
-					50: '#fff7ed',
-					100: '#ffedd5',
-					500: '#f97316',
-					600: '#ea580c',
-					700: '#c2410c',
-					900: '#9a3412'
+					50: '#fefce8',
+					100: '#fef3c7',
+					200: '#fde68a',
+					300: '#fcd34d',
+					400: '#fbbf24',
+					500: '#f59e0b',
+					600: '#d97706',
+					700: '#b45309',
+					800: '#92400e',
+					900: '#78350f'
 				},
+				// Theme 2: Warm Earth Tones - Natural and grounded
 				earth: {
 					50: '#f7f7f6',
 					100: '#e3e3e0',
-					500: '#78716c',
-					600: '#57534e',
-					700: '#44403c',
-					900: '#1c1917'
+					200: '#c6c6c1',
+					300: '#a8a89e',
+					400: '#84cc16',
+					500: '#65a30d',
+					600: '#4d7c0f',
+					700: '#365314',
+					800: '#1a2e05',
+					900: '#0f1419'
+				},
+				terracotta: {
+					50: '#fef7f0',
+					100: '#fdead7',
+					200: '#f9d5ae',
+					300: '#f4b571',
+					400: '#ed8936',
+					500: '#d97706',
+					600: '#c05621',
+					700: '#9c4221',
+					800: '#7c2d12',
+					900: '#431407'
 				}
 			},
 			borderRadius: {
@@ -137,11 +162,6 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'scale-in': 'scale-in 0.2s ease-out'
-			},
-			backgroundImage: {
-				'travel-gradient': 'linear-gradient(135deg, #0ea5e9 0%, #f97316 100%)',
-				'sunset-gradient': 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
-				'ocean-gradient': 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)'
 			}
 		}
 	},
